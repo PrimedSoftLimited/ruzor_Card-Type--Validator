@@ -1,0 +1,75 @@
+var input = Number(prompt("Please input card numbers..."));
+
+function cardType(input) {
+    var dict = {
+        "American Express": [/^34/, /^37/],
+        "Diners Club": [/^305/],
+        "Discover": [/^601/],      
+        "JCB": [/^35/],
+        "MasterCard": [/^222/, /^51/, /^52/, /^53/, /^54/, /^55/],
+        "Visa": [/^4/] 
+    }
+
+    // loop over keys
+    for (var key in dict) {
+        // loop over key values in dict
+        for (var i=0; i < dict[key].length; i++) {
+            // check if input begins with regExp
+            if (dict[key][i].test(input)) {
+                alert("Your "+key+" card is valid");
+                return true;
+            }
+        }
+    }
+    alert("Invalid card no.!");
+}
+
+function cardNumbers(input) {
+    str_input = input.toString();
+    var result = 0;
+    var array_input = str_input.split("");
+    var array_input1 = array_input.slice();
+    
+    // check if length of numbers is even
+    if (Number(str_input.length)%2==0) {
+        for (n=0; n<str_input.length; n+=2) {
+            array_input1[n] = Number(array_input[n])*2;
+        }
+
+        array_input1 = array_input1.join("");
+
+        for (i = 0; i<array_input1.length; i++) {
+            result += parseInt(array_input1[i], 10);
+        }
+        return result%10==0;
+    }
+
+
+    // check if length of numbers is odd
+    else if (Number(str_input.length)%2==1 && str_input.length!=1) {
+        for (n=1; n<str_input.length; n+=2) {
+            array_input1[n] = Number(array_input[n])*2;
+        }
+
+        array_input1 = array_input1.join("");
+        
+        for (i = 0; i<array_input1.length; i++) {
+            result += parseInt(array_input1[i], 10);
+        }
+        return result%10==0;
+    }
+
+    // someone decides to forget their home training and card no. is negative
+    else {
+        return false;
+    }
+}
+
+function Validate() {
+    if (cardNumbers(input)) {
+        cardType(input);
+    }
+    else {
+        alert("Invalid card no.!");
+    }
+}
