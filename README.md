@@ -10,9 +10,9 @@ User must have a working browser, as all input and output interaction is done in
 
 Validation is provided for the following banks only:
 
-*American Express*
-*Diners Club*
-*Discover*
-*JCB*
-*MasterCard*
-*Visa*
+*American Express
+*Diners Club
+*Discover
+*JCB
+*MasterCard
+*Visa
