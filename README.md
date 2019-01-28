@@ -1,6 +1,6 @@
 # ATM Card Validator
 
-This program validates an ATM card by taking as _input_ the frontal digits on the card, and _outputting_ the validity of the card as well as the _card type_. 
+This program validates an ATM card by taking as _input_ the **frontal digits** on the card, and _outputting_ the validity of the card as well as the _card type_. 
 
 ## Prerequisites
 
